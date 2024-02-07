@@ -7,6 +7,7 @@ use App\Http\Controllers\Auth\NewPasswordController;
 use App\Http\Controllers\Auth\PasswordResetLinkController;
 use App\Http\Controllers\Auth\RegisteredUserController;
 use App\Http\Controllers\Auth\VerifyEmailController;
+use App\Http\Controllers\IzdavacController;
 use App\Http\Controllers\KnjigaController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
@@ -59,5 +60,9 @@ Route::post('/logout', [AuthenticatedSessionController::class, 'destroy'])
     ->name('logoutAPI');
 
 Route::get('/knjige', [KnjigaController::class, 'index'])
-    ->middleware('auth')
     ->name('GetKnjige');
+
+Route::post('/knjige', [KnjigaController::class, 'store'])
+    ->name('GetKnjige');
+
+Route::post('/izdavaci', [IzdavacController::class, 'store'])->name('CreateIzdavac');
