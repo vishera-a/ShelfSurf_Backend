@@ -11,7 +11,10 @@ class Kategorija extends Model
     use HasFactory;
 
     protected $table='kategorija';
+    protected $primaryKey = 'KategorijaID';
+    public $timestamps = false;
     protected $fillable = [
+        'KategorijaID',
         'Naziv'
     ];
 
