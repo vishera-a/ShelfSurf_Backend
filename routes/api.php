@@ -7,6 +7,7 @@ use App\Http\Controllers\Auth\NewPasswordController;
 use App\Http\Controllers\Auth\PasswordResetLinkController;
 use App\Http\Controllers\Auth\RegisteredUserController;
 use App\Http\Controllers\Auth\VerifyEmailController;
+use App\Http\Controllers\AutorController;
 use App\Http\Controllers\IzdavacController;   
 use App\Http\Controllers\KategorijaController;
 use App\Http\Controllers\KnjigaController;
@@ -81,6 +82,13 @@ Route::get('/upravljanje-zanr/{kategorija}', [KategorijaController::class, 'show
 Route::post('/upravljanje-zanr', [KategorijaController::class, 'store']);
 Route::patch('/upravljanje-zanr/{kategorijaID}', [KategorijaController::class, 'update']);
 Route::delete('/upravljanje-zanr/{kategorija}', [KategorijaController::class, 'destroy']);
+
+
+Route::get('/upravljanje-autor', [AutorController::class, 'index']);
+Route::get('/upravljanje-autor/{autor}', [AutorController::class, 'show']);
+Route::post('/upravljanje-autor', [AutorController::class, 'store']);
+Route::put('/upravljanje-autor/{autorID}', [AutorController::class, 'update']);
+Route::delete('/upravljanje-autor/{autor}', [AutorController::class, 'destroy']);
 
 
 
