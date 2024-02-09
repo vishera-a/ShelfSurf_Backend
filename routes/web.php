@@ -52,3 +52,12 @@ Route::post('/email/verification-notification', [EmailVerificationNotificationCo
 Route::post('/logout', [AuthenticatedSessionController::class, 'destroy'])
                 ->middleware('auth')
                 ->name('logout');
+
+                use App\Http\Controllers\KategorijaController;
+
+                Route::get('/upravljanje-zanr', [KategorijaController::class, 'index']);
+                Route::get('/upravljanje-zanr/{kategorija}', [KategorijaController::class, 'show']);
+                Route::post('/upravljanje-zanr', [KategorijaController::class, 'store']);
+                Route::patch('/upravljanje-zanr/{kategorijaID}', [KategorijaController::class, 'update']);
+                Route::delete('/upravljanje-zanr/{kategorija}', [KategorijaController::class, 'destroy']);
+                
