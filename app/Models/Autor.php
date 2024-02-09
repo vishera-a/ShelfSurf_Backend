@@ -11,6 +11,8 @@ class Autor extends Model
     use HasFactory;
 
     protected $table='autor';
+    protected $primaryKey = 'AutorID';
+    public $timestamps = false;
     protected $fillable = [
         'Ime',
         'Prezime',
