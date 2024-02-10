@@ -56,6 +56,9 @@ class IzdavacController extends Controller
             ]
         );
 
+        $user->IzdavacID = $izdavac->id;
+        $user->save();
+
         return response($izdavac, 201);
     }
 

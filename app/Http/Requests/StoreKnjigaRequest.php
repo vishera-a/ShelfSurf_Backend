@@ -26,7 +26,7 @@ class StoreKnjigaRequest extends FormRequest
         return [
             'Naziv' => 'required|string|min:1|max:50',
             'KategorijaID' => 'required|integer',
-            'Cena' => 'required|decimal:2',
+            'Cena' => 'required|integer',
             'Stanje' => 'required|integer',
             'Slika' => 'required|string|min:1|max:100'
         ];
