@@ -14,7 +14,6 @@ class Kategorija extends Model
     protected $primaryKey = 'KategorijaID';
     public $timestamps = false;
     protected $fillable = [
-        'KategorijaID',
         'Naziv'
     ];
 
