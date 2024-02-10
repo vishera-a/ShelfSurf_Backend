@@ -8,7 +8,7 @@ use App\Http\Controllers\Auth\PasswordResetLinkController;
 use App\Http\Controllers\Auth\RegisteredUserController;
 use App\Http\Controllers\Auth\VerifyEmailController;
 use App\Http\Controllers\AutorController;
-use App\Http\Controllers\IzdavacController;   
+use App\Http\Controllers\IzdavacController;
 use App\Http\Controllers\KategorijaController;
 use App\Http\Controllers\KnjigaController;
 use App\Http\Controllers\UserController;
@@ -72,7 +72,7 @@ Route::post('/knjige', [KnjigaController::class, 'store'])
 
 Route::post('/upravljanje-zanr', [KategorijaController::class, 'store'])
     ->name('GetKategorija');
-    Route::patch('upravljanje-zanr/{id}', 'KategorijeController@update');
+Route::patch('upravljanje-zanr/{id}', 'KategorijeController@update');
 
 
 Route::get('/upravljanje-zanr', [KategorijaController::class, 'index']);
