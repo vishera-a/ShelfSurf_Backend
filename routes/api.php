@@ -64,8 +64,11 @@ Route::post('/logout', [AuthenticatedSessionController::class, 'destroy'])
 Route::get('/knjige', [KnjigaController::class, 'index'])
     ->name('GetKnjige');
 
+Route::get('/knjige/{KnjigaID}', [KnjigaController::class, 'show'])
+    ->name('GetKnjigaByID');
+
 Route::post('/knjige', [KnjigaController::class, 'store'])
-    ->name('GetKnjige');
+    ->name('GetKnjigePost');
 
 Route::post('/upravljanje-zanr', [KategorijaController::class, 'store'])
     ->name('GetKategorija');
