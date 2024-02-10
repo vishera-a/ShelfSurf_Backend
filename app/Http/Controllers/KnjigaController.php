@@ -81,6 +81,11 @@ class KnjigaController extends Controller
      */
     public function destroy(Knjiga $knjiga)
     {
-        //
+        try {
+            $knjiga->delete();
+            return response()->json(['message' => 'Kategorija successfully deleted'], 200);
+        } catch (\Exception $e) {
+            return response()->json(['message' => 'Error deleting kategorija', 'error' => $e->getMessage()], 500);
+        }
     }
 }
