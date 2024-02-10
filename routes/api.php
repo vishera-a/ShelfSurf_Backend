@@ -71,11 +71,6 @@ Route::post('/upravljanje-zanr', [KategorijaController::class, 'store'])
     ->name('GetKategorija');
     Route::patch('upravljanje-zanr/{id}', 'KategorijeController@update');
 
- 
-
-
-
-    
 
 Route::get('/upravljanje-zanr', [KategorijaController::class, 'index']);
 Route::get('/upravljanje-zanr/{kategorija}', [KategorijaController::class, 'show']);
@@ -91,7 +86,11 @@ Route::put('/upravljanje-autor/{autorID}', [AutorController::class, 'update']);
 Route::delete('/upravljanje-autor/{autor}', [AutorController::class, 'destroy']);
 
 
-
+Route::get('/upravljanje-knjiga', [KnjigaController::class, 'index']);
+Route::get('/upravljanje-knjiga/{knjiga}', [KnjigaController::class, 'show']);
+Route::post('/upravljanje-knjiga', [KnjigaController::class, 'store']);
+Route::put('/upravljanje-knjiga/{knjigaID}', [KnjigaController::class, 'update']);
+Route::delete('/upravljanje-knjiga/{knjiga}', [KnjigaController::class, 'destroy']);
 
 
 Route::post('/izdavaci', [IzdavacController::class, 'store'])->name('CreateIzdavac');

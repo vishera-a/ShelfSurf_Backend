@@ -67,3 +67,10 @@ Route::get('/upravljanje-autor/{autor}', [AutorController::class, 'show']);
 Route::post('/upravljanje-autor', [AutorController::class, 'store']);
 Route::put('/upravljanje-autor/{autorID}', [AutorController::class, 'update']);
 Route::delete('/upravljanje-autor/{autor}', [AutorController::class, 'destroy']);
+
+use App\Http\Controllers\KnjigaController;
+Route::get('/upravljanje-knjiga', [KnjigaController::class, 'index']);
+Route::get('/upravljanje-knjiga/{knjiga}', [KnjigaController::class, 'show']);
+Route::post('/upravljanje-knjiga', [KnjigaController::class, 'store']);
+Route::put('/upravljanje-knjiga/{knjigaID}', [KnjigaController::class, 'update']);
+Route::delete('/upravljanje-knjiga/{knjiga}', [KnjigaController::class, 'destroy']);
