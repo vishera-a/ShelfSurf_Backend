@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\StoreKnjigaRequest;
 use App\Http\Requests\UpdateKnjigaRequest;
+use App\Models\Autor;
+use App\Models\Kategorija;
 use App\Models\Knjiga;
 use Illuminate\Http\Request;
 
@@ -48,7 +50,9 @@ class KnjigaController extends Controller
             return response()->json(['message' => 'Knjiga not found!', 'value' => $KnjigaID], 404);
         }
 
-        return response()->json(['knjiga' => $knjiga], 200);   
+        $zanr = Kategorija::find($knjiga->KategorijaID);
+
+        return response()->json(['knjiga' => $knjiga, 'zanr' => $zanr], 200);   
     }
 
     /**
