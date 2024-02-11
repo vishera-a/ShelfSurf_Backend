@@ -62,6 +62,8 @@ Route::patch('/upravljanje-zanr/{kategorijaID}', [KategorijaController::class, '
 Route::delete('/upravljanje-zanr/{kategorija}', [KategorijaController::class, 'destroy']);
 
 use App\Http\Controllers\AutorController;
+use App\Http\Controllers\IzdavacController;
+
 Route::get('/upravljanje-autor', [AutorController::class, 'index']);
 Route::get('/upravljanje-autor/{autor}', [AutorController::class, 'show']);
 Route::post('/upravljanje-autor', [AutorController::class, 'store']);
@@ -74,3 +76,9 @@ Route::get('/upravljanje-knjiga/{knjiga}', [KnjigaController::class, 'show']);
 Route::post('/upravljanje-knjiga', [KnjigaController::class, 'store']);
 Route::put('/upravljanje-knjiga/{knjigaID}', [KnjigaController::class, 'update']);
 Route::delete('/upravljanje-knjiga/{knjiga}', [KnjigaController::class, 'destroy']);
+
+Route::get('/upravljanje-izdavac', [IzdavacController::class, 'index']);
+Route::get('/upravljanje-izdavac/{izdavac}', [IzdavacController::class, 'show']);
+Route::post('/upravljanje-izdavac', [IzdavacController::class, 'store']);
+Route::put('/upravljanje-izdavac/{izdavacID}', [IzdavacController::class, 'update']);
+Route::delete('/upravljanje-izdavac/{izdavac}', [IzdavacController::class, 'destroy']);
