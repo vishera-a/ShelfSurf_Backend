@@ -11,7 +11,11 @@ class StavkaPorudzbine extends Model
     use HasFactory;
 
     protected $table='stavkaPorudzbine';
+    public $timestamps = false;
+    protected $primaryKey = 'StavkaPorudzbineID';
     protected $fillable = [
+        'PorudzbinaID',
+        'KnjigaID',
         'Kolicina',
         'UkupnaCena'
     ];

@@ -12,7 +12,10 @@ class Porudzbina extends Model
     use HasFactory;
 
     protected $table='porudzbina';
+    protected $primaryKey = 'PorudzbinaID';
+    public $timestamps = false;
     protected $fillable = [
+        'id',
         'Datum',
         'KonacnaCena'
     ];
