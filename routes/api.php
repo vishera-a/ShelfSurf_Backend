@@ -11,6 +11,7 @@ use App\Http\Controllers\AutorController;
 use App\Http\Controllers\IzdavacController;
 use App\Http\Controllers\KategorijaController;
 use App\Http\Controllers\KnjigaController;
+use App\Http\Controllers\PorudzbinaController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
@@ -98,3 +99,4 @@ Route::delete('/upravljanje-knjiga/{knjiga}', [KnjigaController::class, 'destroy
 
 Route::post('/izdavaci', [IzdavacController::class, 'store'])->name('CreateIzdavac');
 Route::resource('/upravljanje-zanr', KategorijaController::class);
+Route::post('/create-order', [PorudzbinaController::class, 'store'])->middleware("auth:sanctum")->name("CreateOrder");
