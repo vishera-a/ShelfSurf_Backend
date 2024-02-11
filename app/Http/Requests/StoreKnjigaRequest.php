@@ -28,7 +28,8 @@ class StoreKnjigaRequest extends FormRequest
             'KategorijaID' => 'required|integer',
             'Cena' => 'required|integer',
             'Stanje' => 'required|integer',
-            'Slika' => 'required|string|min:1|max:100'
+            'Slika' => 'required|string|min:1|max:100',
+            'Opis' => 'required|string|min:1|max:255',
         ];
     }
 

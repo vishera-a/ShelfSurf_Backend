@@ -53,6 +53,7 @@ return new class extends Migration
             $table->float('Cena');
             $table->integer('Stanje');
             $table->string('Slika');
+            $table->string('Opis');
             $table->unsignedBigInteger('IzdavacID');
             $table->integer('IsDeleted')->default(0);
             
