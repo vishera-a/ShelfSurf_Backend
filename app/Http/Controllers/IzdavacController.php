@@ -19,9 +19,8 @@ class IzdavacController extends Controller
      */
     public function index()
     {
-        $izdavaci = Izdavac::where('IsDeleted', 0)->get();
-
-        return response()->json([$izdavaci], 200);
+        $izdavac = Izdavac::all();
+        return response()->json($izdavac, 200);
     }
 
     /**
@@ -36,7 +35,7 @@ class IzdavacController extends Controller
      * Store a newly created resource in storage.
      */
     public function store(StoreIzdavacRequest $request)
-    {        
+    {
         $user = User::create(
             [
                 'Ime' => $request->Ime,
@@ -67,7 +66,8 @@ class IzdavacController extends Controller
      */
     public function show(Izdavac $izdavac)
     {
-        //
+        $izdavac = Izdavac::all();
+        return response()->json($izdavac, 200);
     }
 
     /**
@@ -89,8 +89,25 @@ class IzdavacController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Izdavac $izdavac)
+    public function destroy($izdavacID)
     {
-        //
+        try 
+        {
+            $izdavac = Izdavac::find($izdavacID);
+
+            if($izdavac)
+            {
+                $izdavac->IsDeleted = 1;
+                $izdavac->save();
+
+                return response()->json(['message' => 'Izdavac successfully deleted'], 200);
+            }
+
+            return response()->json(['message' => 'Izdavac not found!'], 404);    
+        } 
+        catch (\Exception $e) 
+        {
+            return response()->json(['message' => 'Error deleting kategorija', 'error' => $e->getMessage()], 500);
+        }
     }
 }

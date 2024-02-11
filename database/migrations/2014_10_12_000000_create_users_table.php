@@ -38,6 +38,7 @@ return new class extends Migration
             $table->id('IzdavacID');
             $table->unsignedBigInteger('id');
             $table->string('Naziv', 30);
+            $table->integer('IsDeleted', 0);
         });
         
         Schema::create('kategorija', function (Blueprint $table) {
@@ -52,6 +53,7 @@ return new class extends Migration
             $table->float('Cena');
             $table->integer('Stanje');
             $table->string('Slika');
+            $table->string('Opis');
             $table->unsignedBigInteger('IzdavacID');
             $table->integer('IsDeleted')->default(0);
             

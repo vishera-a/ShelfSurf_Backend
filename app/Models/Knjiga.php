@@ -21,6 +21,7 @@ class Knjiga extends Model
         'Stanje',
         'Slika',
         'IzdavacID',
+        'Opis'
     ];
 
     public function Kategorija(): HasOne

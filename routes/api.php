@@ -100,3 +100,8 @@ Route::delete('/upravljanje-knjiga/{knjiga}', [KnjigaController::class, 'destroy
 Route::post('/izdavaci', [IzdavacController::class, 'store'])->name('CreateIzdavac');
 Route::resource('/upravljanje-zanr', KategorijaController::class);
 Route::post('/create-order', [PorudzbinaController::class, 'store'])->middleware("auth:sanctum")->name("CreateOrder");
+Route::get('/upravljanje-izdavac', [IzdavacController::class, 'index']);
+Route::get('/upravljanje-izdavac/{izdavac}', [IzdavacController::class, 'show']);
+Route::post('/upravljanje-izdavac', [IzdavacController::class, 'store']);
+Route::put('/upravljanje-izdavac/{izdavacID}', [IzdavacController::class, 'update']);
+Route::post('/upravljanje-izdavac-delete/{izdavacID}', [IzdavacController::class, 'destroy']);
