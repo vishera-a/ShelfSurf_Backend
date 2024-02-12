@@ -21,6 +21,7 @@ class Knjiga extends Model
         'Stanje',
         'Slika',
         'IzdavacID',
+        'AutorID',
         'Opis'
     ];
 
@@ -37,6 +38,11 @@ class Knjiga extends Model
     public function AutoriKnjige(): HasMany
     {
         return $this->hasMany(AutoriKnjige::class);
+    }
+
+    public function Autor(): HasOne
+    {
+        return $this->hasOne(Autor::class);
     }
 
     public function StavkaPorudzbine(): HasMany
