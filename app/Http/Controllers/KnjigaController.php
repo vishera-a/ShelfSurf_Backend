@@ -7,6 +7,7 @@ use App\Http\Requests\UpdateKnjigaRequest;
 use App\Models\Autor;
 use App\Models\Kategorija;
 use App\Models\Knjiga;
+use App\Models\Izdavac;
 use Illuminate\Http\Request;
 
 class KnjigaController extends Controller
@@ -51,8 +52,10 @@ class KnjigaController extends Controller
         }
 
         $zanr = Kategorija::find($knjiga->KategorijaID);
+        $autor = Autor::find($knjiga->AutorID);
+        $izdavac = Izdavac::find($knjiga->IzdavacID);
 
-        return response()->json(['knjiga' => $knjiga, 'zanr' => $zanr], 200);   
+        return response()->json(['knjiga' => $knjiga, 'zanr' => $zanr, 'autor' => $autor, 'izdavac' => $izdavac], 200);   
     }
 
     /**
