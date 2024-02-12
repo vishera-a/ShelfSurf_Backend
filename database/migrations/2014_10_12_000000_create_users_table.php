@@ -53,12 +53,14 @@ return new class extends Migration
             $table->float('Cena');
             $table->integer('Stanje');
             $table->string('Slika');
-            $table->string('Opis');
+            $table->string('Opis', 400);
             $table->unsignedBigInteger('IzdavacID');
+            $table->unsignedBigInteger('AutorID');
             $table->integer('IsDeleted')->default(0);
-            
+    
             $table->foreign('IzdavacID')->references('IzdavacID')->on('izdavac');
             $table->foreign('KategorijaID')->references('KategorijaID')->on('kategorija');
+            $table->foreign('AutorID')->references('AutorID')->on('Autor');
         });
 
         Schema::create('autoriKnjige', function (Blueprint $table) {
