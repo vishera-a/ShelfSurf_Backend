@@ -104,4 +104,4 @@ Route::get('/upravljanje-izdavac', [IzdavacController::class, 'index']);
 Route::get('/upravljanje-izdavac/{izdavac}', [IzdavacController::class, 'show']);
 Route::post('/upravljanje-izdavac', [IzdavacController::class, 'store']);
 Route::put('/upravljanje-izdavac/{izdavacID}', [IzdavacController::class, 'update']);
-Route::post('/upravljanje-izdavac-delete/{izdavacID}', [IzdavacController::class, 'destroy']);
+Route::delete('/upravljanje-izdavac-delete/{izdavacID}', [IzdavacController::class, 'destroy']);
