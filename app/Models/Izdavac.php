@@ -10,7 +10,8 @@ class Izdavac extends Model
 {
     use HasFactory;
 
-    protected $table='izdavac';
+    protected $table = 'izdavac';
+    protected $primaryKey = 'IzdavacID';
     public $timestamps = false;
     protected $fillable = [
         'Naziv',
