@@ -83,12 +83,24 @@ class KnjigaController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Knjiga $knjiga)
+    public function destroy($knjigaID)
     {
-        try {
-            $knjiga->delete();
-            return response()->json(['message' => 'Kategorija successfully deleted'], 200);
-        } catch (\Exception $e) {
+        try 
+        {
+            $knjiga = Knjiga::find($knjigaID);
+
+            if($knjiga)
+            {
+                $knjiga->IsDeleted = 1;
+                $knjiga->save();
+
+                return response()->json(['message' => 'Knjiga successfully deleted'], 200);
+            }
+
+            return response()->json(['message' => 'Knjiga not found!'], 404);    
+        } 
+        catch (\Exception $e) 
+        {
             return response()->json(['message' => 'Error deleting kategorija', 'error' => $e->getMessage()], 500);
         }
     }
