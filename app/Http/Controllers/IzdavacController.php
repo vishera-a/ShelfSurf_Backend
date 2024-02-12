@@ -19,7 +19,7 @@ class IzdavacController extends Controller
      */
     public function index()
     {
-        $izdavac = Izdavac::all();
+        $izdavac = Izdavac::where('IsDeleted', 0)->get();
         return response()->json($izdavac, 200);
     }
 
@@ -107,7 +107,7 @@ class IzdavacController extends Controller
         } 
         catch (\Exception $e) 
         {
-            return response()->json(['message' => 'Error deleting kategorija', 'error' => $e->getMessage()], 500);
+            return response()->json(['message' => 'Error deleting izdavac', 'error' => $e->getMessage()], 500);
         }
     }
 }
