@@ -26,7 +26,7 @@ class UpdateKnjigaRequest extends FormRequest
         return [
             'Naziv' => 'sometimes|required|string|min:1|max:50',
             'KategorijaID' => 'sometimes|required|integer',
-            'Cena' => 'sometimes|required|decimal:2',
+            'Cena' => 'sometimes|required|integer',
             'Stanje' => 'sometimes|required|integer',
             'Slika' => 'string|min:1|max:100'
         ];
