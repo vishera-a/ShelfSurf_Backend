@@ -105,3 +105,6 @@ Route::get('/upravljanje-izdavac/{izdavac}', [IzdavacController::class, 'show'])
 Route::post('/upravljanje-izdavac', [IzdavacController::class, 'store']);
 Route::put('/upravljanje-izdavac/{izdavacID}', [IzdavacController::class, 'update']);
 Route::delete('/upravljanje-izdavac-delete/{izdavacID}', [IzdavacController::class, 'destroy']);
+
+Route::get('/user-data', [UserController::class, 'GetUserDataByToken'])->middleware("auth:sanctum")->name("GetUserDataByToken");
+Route::post('/update-user', [UserController::class, 'update'])->middleware("auth:sanctum")->name("UpdateUser");
