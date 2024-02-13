@@ -17,7 +17,7 @@ class KnjigaController extends Controller
      */
     public function index()
     {
-        $knjige = Knjiga::where('IsDeleted', 0)->get();
+        $knjige = Knjiga::where(['IsDeleted'=> 0])->get();
 
         return response()->json([$knjige], 200);
     }
